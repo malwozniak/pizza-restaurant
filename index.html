@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/style.css">
+    
+    <script src="js/index.js"></script>
+    <title>Pizza - Restauracja</title>
+
+</head>
+<body>
+    <section class="card">
+        
+        <nav>
+            <h1 id="title-main">WYBIERZ SWOJĄ PIZZĘ</h1>
+            <h2 id="card-table"> Karta zakupów</h2>
+            <button type="button" class="btn" data-target="#cart"><img src="icons/outline_shopping_cart_white_24dp.png" alt="icon"></button>
+            <hr>
+        </nav>
+     <div id="pizza-box">
+    </div>
+    <div class="sidenav">
+        
+       
+<aside class="cart js-cart">
+    <div class="cart__header">
+      <h1 class="cart__title">Karta Zakupów</h1>
+      <p class="cart__text">
+        <a class="add-item-button js-toggle-cart" href="#" title="Zamknij">
+          Zamknij
+        </a>
+      </p>
+    </div>
+    <div class="cart__products js-cart-products">
+      <p class="cart__empty js-cart-empty">
+       Dodaj pizzę
+      </p>
+      <div class="cart__product js-cart-product-template">
+        <article class="js-cart-product">
+          <p>
+            <a id="js-remove-product" href="#" title="Usuń pizzę">
+              Usuń pizzę
+            </a>
+          </p>
+        </article>
+      </div>
+    </div>
+    <div class="cart__footer">
+      <p class="cart__text">
+        <a class="add-item-button" href="#" title="Sprawdź pizzę">
+          Kup pizzę
+        </a>
+      </p>
+    </div>
+  </aside>
+  
+  <div class="lightbox js-toggle-cart"></div>
+        
+    </div>
+    </section>
+    <script >
+   
+    </script>
+</body>
+</html>
