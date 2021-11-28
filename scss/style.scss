@@ -168,6 +168,12 @@ div{
     padding: 10px;
 }
 
+body.open {
+  overflow-y: hidden;
+}
+body.open .cart {
+  transform: translate(0, 0);
+}
 .button{
   position: absolute;
   top: -17px;
@@ -379,14 +385,16 @@ div{
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 15px;
   }
   
   .body.open {
     overflow-y: hidden;
+  }
+  .body.hide {
+    overflow-y: hidden;
+    display: none;
   }
   .body .lightbox {
     width: 100%;

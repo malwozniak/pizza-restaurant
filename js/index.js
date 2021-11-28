@@ -33,28 +33,17 @@ function renderOneOfProduct(product){
     </div>
     `
     findDiv.append(newElement)
-
-    var numberOfProducts = 0;
-    document.querySelector(".add-item").addEventListener('click',  addProduct);
-
-    function addProduct(product) {
-        product.preventDefault();
-        openCart();
-        document.querySelector('.js-cart-empty').classList.add('hide');
-        var productCart = document.querySelector('.js-cart-product-template');
-        document.querySelector('.js-cart-products').prepend(productCart);
-        numberOfProducts++;
-      }
+  
 
 
            
     var cartOpen = false;
-    document.querySelector('.js-toggle-cart').addEventListener('click',  toggleCart);
-    document.getElementById('js-remove-product').addEventListener('click', removeProduct);
+    document.querySelector('.toggle-cart').addEventListener('click',  toggleCart);
+    document.getElementById('remove-product').addEventListener('click', removeProduct);
     
-    function toggleCart(e) {
-      e.preventDefault();
-      if(!cartOpen) {
+    function toggleCart(newElement) {
+      newElement.preventDefault();
+      if(cartOpen == true) {
         closeCart();
         return;
       }
@@ -63,22 +52,36 @@ function renderOneOfProduct(product){
     
     function openCart() {
       cartOpen = true;
-      document.querySelector('body').classList.add('open');
+     var el=  document.querySelector('body').classList.add('open');
+      console.log(el)
     }
     
     function closeCart() {
       cartOpen = false;
-      document.querySelector('body').removeClass('open');
+     var el= document.querySelector('body').classList.remove('open');
+      console.log(el)
     }
-    
-    
+   
     function removeProduct(e) {
       e.preventDefault();
       numberOfProducts--;
-      document.querySelector(this).closest('.js-cart-product').hide(250);
+      document.querySelector(this).closest('.cart-product').style.display = 'none';;
       if(numberOfProducts == 0) {
-        document.querySelector('.js-cart-empty').removeClass('hide');
+        document.querySelector('.cart-empty').remove('hide');
       }
     }
+  
+    var numberOfProducts = 0;
+    document.querySelector(".add-item").addEventListener('click',  addProduct);
+
+    function addProduct(e) {
+        e.preventDefault();
+        openCart();
+    document.querySelector('.cart-empty').classList.add('hide');
+        var productCart = document.querySelector(".item_title").innerHTML;
+        
+        document.querySelector('.cart-products').appendChild(document.createTextNode(productCart));
+        numberOfProducts++;
+      }
     }
 

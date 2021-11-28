@@ -15,7 +15,7 @@
         
         <nav>
             <h1 id="title-main">WYBIERZ SWOJĄ PIZZĘ</h1>
-            <h2 id="card-table"> Karta zakupów</h2>
+            <h2 id="card-table" onclick=toggle() > Karta zakupów</h2>
             <button type="button" class="btn" data-target="#cart"><img src="icons/outline_shopping_cart_white_24dp.png" alt="icon"></button>
             <hr>
         </nav>
@@ -24,23 +24,23 @@
     <div class="sidenav">
         
        
-<aside class="cart js-cart">
+<aside class="cart" id="cart">
     <div class="cart__header">
       <h1 class="cart__title">Karta Zakupów</h1>
       <p class="cart__text">
-        <a class="add-item-button js-toggle-cart" href="#" title="Zamknij">
+        <a class="add-item-button toggle-cart" onlick=toggle() href="#" title="Zamknij">
           Zamknij
         </a>
       </p>
     </div>
-    <div class="cart__products js-cart-products">
-      <p class="cart__empty js-cart-empty">
+    <div class="cart__products cart-products">
+      <p class="cart__empty cart-empty">
        Dodaj pizzę
       </p>
-      <div class="cart__product js-cart-product-template">
-        <article class="js-cart-product">
+      <div class="cart__product cart-product-template">
+        <article class="cart-product">
           <p>
-            <a id="js-remove-product" href="#" title="Usuń pizzę">
+            <a id="remove-product" href="#" title="Usuń pizzę">
               Usuń pizzę
             </a>
           </p>
@@ -49,19 +49,25 @@
     </div>
     <div class="cart__footer">
       <p class="cart__text">
-        <a class="add-item-button" href="#" title="Sprawdź pizzę">
+        <a class="add-item-button toggle-cart" href="#" title="Sprawdź pizzę">
           Kup pizzę
         </a>
       </p>
     </div>
   </aside>
-  
-  <div class="lightbox js-toggle-cart"></div>
+  <div class="lightbox js-lightbox toggle-cart"></div>
         
     </div>
     </section>
     <script >
-   
+   function toggle() {
+  var x = document.querySelector("cart");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
     </script>
 </body>
 </html>
